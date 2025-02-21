@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'detailscreen.dart';
 import '../components/productlist.dart';
-import 'homescreen.dart';
 
 class DetailScreen extends StatefulWidget {
   final ProductList product;
