@@ -123,23 +123,15 @@ class OnBoardingState extends State<Onboarding> {
                                 children: [
                                   TextButton(
                                     onPressed: () {
-                                      if (index > 0) {
-                                        pageController.previousPage(
-                                          duration: Duration(milliseconds: 300),
-                                          curve: Curves.easeIn,
-                                        );
-                                      }
+                                        pageController.jumpToPage(onboardingData.length - 1);
                                     },
-                                    child: Opacity(
-                                      opacity: index > 0 ? 1 : 0,
-                                      child: Text(
-                                        'Back',
+                                    child: Text(
+                                        'Skip',
                                         style: TextStyle(
                                           fontSize: 16,
                                           fontWeight: FontWeight.w700,
                                           color: Colors.white,
                                         ),
-                                      ),
                                     ),
                                   ),
                                   TextButton(

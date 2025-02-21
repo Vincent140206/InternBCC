@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
-
+import 'detailscreen.dart';
+import '../components/productlist.dart';
 import 'homescreen.dart';
 
 class DetailScreen extends StatefulWidget {
-  const DetailScreen({super.key,});
+  final ProductList product;
+  const DetailScreen({super.key, required this.product});
 
   @override
   State<DetailScreen> createState() => _DetailScreenState();
@@ -35,7 +37,7 @@ class _DetailScreenState extends State<DetailScreen> {
                         children: [
                           IconButton(
                             onPressed: (){
-                              Navigator.of(context).push(MaterialPageRoute(builder: (context)=>HomeScreen()));
+                              Navigator.of(context).pop();
                             },
                             icon: Icon(
                               Icons.arrow_back_ios_new_sharp,
@@ -76,11 +78,93 @@ class _DetailScreenState extends State<DetailScreen> {
                     ),
                     borderRadius: BorderRadius.circular(8),
                   ),
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(8),
+                  child: Image.asset(
+                    widget.product.imagePath
                   ),
                 )
             ),
+            SizedBox(height: 31,),
+            Column(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 15),
+                  child: Align(
+                    alignment: Alignment.bottomLeft,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          widget.product.name,
+                          style: TextStyle(
+                              fontSize: 25,
+                              fontWeight: FontWeight.bold
+                          ),
+                        ),
+                        Text(
+                          widget.product.price,
+                          style: TextStyle(
+                            fontSize: 25,
+                            fontWeight: FontWeight.w600
+                          ),
+                        ),
+                        SizedBox(height: 16,),
+                        Text(
+                          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. '
+                              'Sed auctor est nec metus vulputate, ac vestibulum purus '
+                              'suscipit. Nullam pretium ultrices neque, non ultricies '
+                              'nisi venenatis vitae.',
+                          style: TextStyle(
+                            fontSize: 16,
+                            color: Color(0XFF787878)
+                          ),
+                        ),
+                        Text(
+                            'Baca lebih lanjut',
+                          style: TextStyle(
+                              fontSize: 16,
+                              color: Color(0XFF25475F)
+                          )
+                        ),
+                        SizedBox(height: 16,),
+                        Row(
+                          children: [
+                            ClipOval(
+                              child: Image.asset(
+                                'assets/images/Ellipse 5.png',
+                                height: 40,
+                                width: 40,
+                              ),
+                            ),
+                            SizedBox(width: 12,),
+                            Text(
+                              'BASIC VEGETABLE',
+                              style: TextStyle(
+                                  fontSize: 16
+                              ),
+                            ),
+                            SizedBox(width: 59,),
+                            Image.asset(
+                              'assets/images/Bintang.png',
+                              width: 21,
+                              height: 22,
+                            ),
+                            SizedBox(width: 10,),
+                            Text(
+                              widget.product.star,
+                              style: TextStyle(
+                                  fontSize: 16,
+                                color: Color(0XFFFCAE51),
+                                fontWeight: FontWeight.w900
+                              ),
+                            ),
+                          ],
+                        )
+                      ],
+                    ),
+                  ),
+                ),
+              ],
+            )
           ],
         ),
       ),
