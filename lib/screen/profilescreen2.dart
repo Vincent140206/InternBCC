@@ -1,4 +1,3 @@
-import 'package:bcc1/auth/loginscreen.dart';
 import 'package:bcc1/screen/profilescreen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';

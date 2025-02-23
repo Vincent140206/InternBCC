@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
-import '../auth/splashscreen.dart';
+import '../screen/auth/splashscreen.dart';
 import 'app_cubit.dart';
 import 'app_cubit_states.dart';
 

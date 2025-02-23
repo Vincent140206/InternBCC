@@ -1,5 +1,3 @@
-import 'package:flutter/cupertino.dart';
-
 class ProductList {
   final String name;
   final String price;

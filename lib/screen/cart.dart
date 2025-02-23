@@ -1,3 +1,4 @@
+import 'package:bcc1/screen/homescreen.dart';
 import 'package:flutter/material.dart';
 
 class Cart extends StatelessWidget {
@@ -28,7 +29,8 @@ class Cart extends StatelessWidget {
                         children: [
                           IconButton(
                             onPressed: (){
-                              Navigator.of(context).pop();
+                              Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => HomeScreen()));
+                              ;
                             },
                             icon: Icon(
                               Icons.arrow_back_ios_new_sharp,

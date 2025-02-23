@@ -1,7 +1,6 @@
-import 'package:bcc1/auth/loginscreen.dart';
 import 'package:bcc1/screen/profilescreen2.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'auth/loginscreen.dart';
 
 class ProfileScreen extends StatelessWidget {
   final TextEditingController nameController = TextEditingController();
